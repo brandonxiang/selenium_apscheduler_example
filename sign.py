@@ -9,7 +9,6 @@ import time
 
 # 登陆
 def login():
-	brower = webdriver.Firefox()
 	brower.get("http://XX.XX.com/")
 	brower.find_element_by_id("InputName").send_keys('XXX'.decode('utf8'))
 	brower.find_element_by_id("InputPassword").send_keys("XXX")
