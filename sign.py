@@ -23,7 +23,7 @@ def click_event(brower,btnName):
 
 schedular = BackgroundScheduler()
 
-# 上午上班
+# 上午8：58
 @schedular.scheduled_job('cron',day_of_week='mon-fri',hour=8,minute=58)
 def MorningOn():
 	logging.basicConfig()
@@ -31,21 +31,21 @@ def MorningOn():
 	click_event(driver,"btnMOn")
 
 
-# 上午下班
+# 上午12：02
 @schedular.scheduled_job('cron',day_of_week='mon-fri',hour=12,minute=2)
 def MorningOff():
 	logging.basicConfig()
 	driver =login()
 	click_event(driver,"btnMOff")
 
-# 下午上班
+# 下午13：58
 @schedular.scheduled_job('cron',day_of_week='mon-fri',hour=13,minute=58)
 def AfternoonOn():
 	logging.basicConfig()
 	driver =login()
 	click_event(driver,"btnNOn")
 
-# 下午下班
+# 下午18：02
 @schedular.scheduled_job('cron',day_of_week='mon-fri',hour=18,minute=2)
 def AfternoonOff():
 	logging.basicConfig()
